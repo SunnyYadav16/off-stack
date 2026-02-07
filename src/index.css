@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 139 92 246;
+    --color-secondary: 99 102 241;
+    --color-accent: 236 72 153;
+    --color-bg: 255 255 255;
+    --color-surface: 249 250 251;
+    --color-text: 17 24 39;
+  }
+
+  .dark {
+    --color-bg: 17 24 39;
+    --color-surface: 31 41 55;
+    --color-text: 243 244 246;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-text));
+    margin: 0;
+    padding: 0;
+  }
+}

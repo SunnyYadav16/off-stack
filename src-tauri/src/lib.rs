@@ -1,4 +1,7 @@
 mod clipboard;
+pub mod db;
+pub mod ai;
+pub mod utils;
 
 use tauri::Emitter;
 use tauri_plugin_dialog::{DialogExt, MessageDialogButtons, MessageDialogKind};
@@ -18,6 +21,12 @@ pub fn run() {
             version: 2,
             description: "create_fts5_table",
             sql: include_str!("../migrations/002_fts5.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 3,
+            description: "add_complexity_fields",
+            sql: include_str!("../migrations/003_add_complexity_fields.sql"),
             kind: MigrationKind::Up,
         },
     ];
